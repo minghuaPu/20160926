@@ -50,7 +50,7 @@ class CompanyController extends BaseController
 		$pdo_model->add("company",$add_array);
 
 
-		jump_do("添加成功！","/company");
+		parent::jump_do("添加成功！","/company");
 	}
 
 
@@ -76,7 +76,7 @@ class CompanyController extends BaseController
 		$_POST['enterprise_id']=$_SESSION['uid'];
 		$pdo_model->update('company',$_POST,array('id'=>$id));
 
-		jump_do("修改成功！","/company");
+		parent::jump_do("修改成功！","/company");
 	}
 
 	public function delete()
@@ -86,9 +86,9 @@ class CompanyController extends BaseController
 		$id=intval($_REQUEST['id']);
 		if ($id>0) {
 			$pdo_model->delete('company',$id);
-			jump_do("删除成功！","/company");
+			parent::jump_do("删除成功！","/company");
 		}else{
-			jump_do("操作有误！","/company");
+			parent::jump_do("操作有误！","/company");
 		}
 	}
 
