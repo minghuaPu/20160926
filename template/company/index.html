@@ -1,0 +1,66 @@
+
+{include "public/header.html"}
+
+
+  <div class="container">
+    <a href="{URL_PATH}/company/add" class="btn btn-success">添加企业</a>
+    <a href="{URL_PATH}/job" class="btn btn-success">招聘管理</a>
+    
+    <br>
+    <br>
+
+    <div class="row mb10">
+      <div class="col-md-4">排序：<a href="{URL_PATH}/company/index">默认</a> <a href="{URL_PATH}/index.php?c=company&sort=desc">倒序</a></div>
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+          <form action="{URL_PATH}/index.php?c=company" method="post">
+            <input type="text" name="keywords" class="form-control in-block" placeholder="请输入企业名称关键词">
+            <input type="submit" class="btn btn-info">
+          </form>
+
+      </div>
+    </div>
+
+    <table class="table">
+      <tr>
+        <th>公司名称</th>
+        <th>电话</th>
+        <th>公司地址</th>
+        <th>发布时间</th>
+        <th>操作</th>
+      </tr>
+      {foreach $company_list $value}
+
+<tr>
+        <td>{$value['company_name']}</td>
+        <td>{$value['telphone']}</td>
+        <td>{$value['address']}</td>
+        <td>{$value['add_time']|date_format:"Y-m-d H:i"}</td>
+        <td>  <a href='{URL_PATH}/index.php?c=company&a=edit&id={$value['id']}'>修改</a> &nbsp;&nbsp;<a onclick=confim_do('{URL_PATH}/index.php?c=company&a=delete&id={$value['id']}') class='text-danger'  >删除</a></td>
+      </tr>
+      {/foreach}
+     
+    </table>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-10">
+        分页：4/8
+          <a href="{URL_PATH}/index.php?c=company&p=1">第一页</a>
+          <a href="{URL_PATH}/index.php?c=company&p=2">第二页</a>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+    <a href="index.php?a=logout" class="btn btn-danger fr">退出</a>
+  </div>
+  <script>
+      function confim_do (href_url) {
+        if (window.confirm("确认删除这条信息吗？")) {
+            location.href=href_url;
+        }else{
+          
+
+        }
+      }
+  </script>
+{include "public/footer.html"} 
+ 

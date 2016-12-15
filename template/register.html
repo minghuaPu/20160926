@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <title>企业会员注册</title>
+
+    <!-- 引用jQuery -->
+    <script type="text/javascript" src="{URL_PATH}/public/js/jquery.1.11.1.min.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <form action="index.php" method="post">
+            <div class="form-group">
+                用户名：
+                <input type="text" name="user_name" required></div>
+            <div class="form-group">
+                密码：
+                <input type="password" name="user_pwd" required></div>
+            
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" value="注册">
+
+                <!-- 下面这个部分 -->
+                <input type="hidden" name="c" value="login">
+                <input type="hidden" name="a" value="do_register"></div>
+        </form>
+    </div>
+
+</body>
+</html>

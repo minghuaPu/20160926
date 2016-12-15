@@ -1,0 +1,10 @@
+<ifModule mod_rewrite.c>
+	RewriteEngine On
+
+
+	RewriteCond %{REQUEST_FILENAME} !-f
+
+	RewriteRule ^(\w*)$ index.php?c=$1 [L] 
+	RewriteRule ^(\w*)\/(\w*)$ index.php?c=$1&a=$2 [L] 
+
+</ifModule>

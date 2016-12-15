@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+  <title>企业会员登录</title>
+
+  <!-- 引用jQuery -->
+  <script type="text/javascript" src="{URL_PATH}/public/js/jquery.1.11.1.min.js"></script>
+  <link rel="stylesheet" href="{URL_PATH}/public/bootstrap-3.3.0/css/bootstrap.min.css"></head>
+
+
+</head>
+
+<body>
+  <div class="container">
+    <form action="index.php" method="post">
+      <div class="form-group">
+        用户名：
+        <input type="text" name="user_name" required></div>
+      <div class="form-group">
+        密码：
+        <input type="password" name="user_pwd" required></div>
+      <div class="form-group">
+        验证码：
+        <input type="text" name="yzm_val" required>
+        <img src="libraries/code.php" onclick="change_code(this)" alt=""></div>
+      <div class="form-group">
+        <input type="submit" class="btn btn-primary">
+
+        <!-- 下面这个部分 -->
+        <input type="hidden" name="c" value="login">
+        <input type="hidden" name="a" value="do_login"></div>
+    </form>
+  </div>
+  <script type="text/javascript">
+
+  function change_code (cur) {
+    $(cur).attr("src","libraries/code.php?"+Math.random());
+  }
+  </script>
+</body>
+</html>

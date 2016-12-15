@@ -1,0 +1,6 @@
+.container{margin-top: 20px;}
+
+.fl{float: left;display: inline-block;}
+.fr{float: right;display: inline-block;}
+.mb10{margin-bottom: 10px;}
+.in-block{display: inline-block;width: 50%;}

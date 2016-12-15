@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+  <title>{$company_info['company_name']}的{$info['job_name']}</title>
+  <meta name="keywrods" content="{$info['job_name']}">
+  <meta name="description" content="{$info['job_require']}">
+  <!-- 引用jQuery -->
+  <script type="text/javascript" src="{URL_PATH}/public/js/jquery.1.11.1.min.js"></script>
+
+  <link rel="stylesheet" href="{URL_PATH}/public/bootstrap-3.3.0/css/bootstrap.min.css"></head>
+
+  <style type="text/css">.row{margin: 0;}</style>
+<body>
+<div class="container">
+  <h3>
+    {$info['job_name']}</h3>
+
+  <h5>
+    企业名称：
+    {$company_info['company_name']}</h5>
+  <div class="row">
+    <h2>岗位要求</h2>
+    <section>
+      {$info['job_require']}</section>
+  </div>
+  </div>
+</body>
+</html>
