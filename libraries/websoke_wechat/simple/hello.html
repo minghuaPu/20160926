@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+
+	<title>H5的websocket客户端基础</title>
+</head>
+<body>
+
+<input type="text" id="msg" >
+<input type="button" onclick="send_info()">
+<script type="text/javascript">
+var socket=new WebSocket('ws://127.0.0.1:8000');
+
+
+
+socket.onopen=function  (event) {
+	console.log(event);
+	
+	socket.send("I come in");
+
+	socket.onmessage=function  (event) {
+		console.log("someboy say:",JSON.parse(event.data).mess);
+	}
+
+	socket.onclose=function  (evnet) {
+		 console.log('Client notified socket has closed',event); 
+  }; 
+
+  // 关闭Socket.... 
+  //socket.close() 
+}
+
+function send_info () {
+	socket.send(document.getElementById('msg').value);
+}
+</script>
+</body>
+</html>
