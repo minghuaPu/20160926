@@ -1,0 +1,16 @@
+git安装完，进入www目录 点右键Git Bash Here
+
+[老师] 11:40:34
+git clone https://github.com/minghuaPu/20160926.git
+[老师] 11:46:19
+然后修改任意文件的内容
+使用以下命令提交：
+第一步： git add  文件目录+文件名
+第二步：git commit -m "first commit"
+第三步：git remote add origin https://github.com/minghuaPu/20160926.git
+第四步：git push -u origin master
+[老师] 11:47:54
+更新操作：
+git fetch
+
+注意的点：一旦有同学提交，你在提交的时候，必须是要先更新才能提交！

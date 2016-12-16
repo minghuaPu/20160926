@@ -76,7 +76,7 @@ class CompanyController extends BaseController
 		$_POST['enterprise_id']=$_SESSION['uid'];
 		$pdo_model->update('company',$_POST,array('id'=>$id));
 
-		parent::jump_do("修改成功！","/company");
+		jump_do("修改成功！","/company");
 	}
 
 	public function delete()
