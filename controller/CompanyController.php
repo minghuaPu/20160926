@@ -50,7 +50,7 @@ class CompanyController extends BaseController
 		$pdo_model->add("company",$add_array);
 
 
-		jump_do("添加成功！","/company");
+		parent::jump_do("添加成功！","/company");
 	}
 
 
