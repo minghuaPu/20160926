@@ -1,25 +1,60 @@
+<?php
+/* Smarty version 3.1.30, created on 2016-12-16 15:04:48
+  from "D:\wamp\www\20160926\dream_upgrade\template\job\edit.html" */
 
-{include "public/header.html"}
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_58539210299434_61321090',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '467f481ad754be872543eb249d7741641babf05b' => 
+    array (
+      0 => 'D:\\wamp\\www\\20160926\\dream_upgrade\\template\\job\\edit.html',
+      1 => 1481871885,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:public/header.html' => 1,
+    'file:public/footer.html' => 1,
+  ),
+),false)) {
+function content_58539210299434_61321090 (Smarty_Internal_Template $_smarty_tpl) {
+?>
+
+<?php $_smarty_tpl->_subTemplateRender("file:public/header.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+
 <style>
   #allmap { width: 100%;height: 100%;margin:10px  0!important;overflow: hidden;margin:0;font-family:"微软雅黑"; }
 </style>
-<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ugoCVFLWrP4jOeIKSC8x0xGDntHVEYux"></script>
+<?php echo '<script'; ?>
+ type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ugoCVFLWrP4jOeIKSC8x0xGDntHVEYux"><?php echo '</script'; ?>
+>
 
 <div class="container">
 
-  <form action="{URL_PATH}/job/update" method="post">
+  <form action="<?php echo URL_PATH;?>
+/job/update" method="post">
     <div class="form-group">
       <label for="">岗位名称：</label>
-      <input type="text"  class="form-control" value="{$info_arr['job_name']}"  name="job_name" required></div>
+      <input type="text"  class="form-control" value="<?php echo $_smarty_tpl->tpl_vars['info_arr']->value['job_name'];?>
+"  name="job_name" required></div>
     <div class="form-group">
       工资：
-      <input type="text" class="form-control" value="{$info_arr['money']}" name="money" required></div>
+      <input type="text" class="form-control" value="<?php echo $_smarty_tpl->tpl_vars['info_arr']->value['money'];?>
+" name="money" required></div>
     <div class="form-group" style="height:380px;padding:20px 0;">
       <div class="fl">
         经度：
-        <input type="text" name="lng" value="{$info_arr['lng']}">
+        <input type="text" name="lng" value="<?php echo $_smarty_tpl->tpl_vars['info_arr']->value['lng'];?>
+">
         纬度：
-        <input type="text" name="lat" value="{$info_arr['lat']}"></div>
+        <input type="text" name="lat" value="<?php echo $_smarty_tpl->tpl_vars['info_arr']->value['lat'];?>
+"></div>
 
       <div class="fr">
         <input type="text" id="key_box" >
@@ -31,21 +66,24 @@
     </div>
     <div class="form-group" style="margin-top:30px">
       岗位要求：
-      <textarea class="form-control"   name="job_require" id="" cols="30" rows="10">{$info_arr['job_require']}</textarea>
+      <textarea class="form-control"   name="job_require" id="" cols="30" rows="10"><?php echo $_smarty_tpl->tpl_vars['info_arr']->value['job_require'];?>
+</textarea>
     </div>
 
     <div class="form-group" >
 
       <input type="submit" class="btn btn-success" value="修改招聘">
       <!-- 这个是编辑的条件 -->
-      <input type="hidden" name="id" value="{$id}">
+      <input type="hidden" name="id" value="<?php echo $_smarty_tpl->tpl_vars['id']->value;?>
+">
 
       <a  href="javascript:history.go(-1);" class="btn">返回</a>
 
     </div>
   </form>
 </div>
-<script type="text/javascript">
+<?php echo '<script'; ?>
+ type="text/javascript">
   // 百度地图API功能
   var map = new BMap.Map("allmap"); 
   var lng = $("input[name='lng']").val();
@@ -91,5 +129,8 @@
    
     local.search($("#key_box").val());
   }
-</script>
-{include "public/footer.html"}
+<?php echo '</script'; ?>
+>
+<?php $_smarty_tpl->_subTemplateRender("file:public/footer.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+}
+}

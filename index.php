@@ -1,5 +1,6 @@
 <?
 
+
 include("init.php");                
 
 $application=new BaseController();

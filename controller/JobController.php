@@ -29,10 +29,28 @@ class  JobController extends BaseController{
 				$where_ar['keywords_col']='job_name';
 			}
 
+			// 如果一页显示5条，总共有15条记录
+			// 3页
+			
+			$page_args['page_num']=2;//一页显示多少条
+			$page_args['page']=$_GET['p']>0?$_GET['p']:1;//1 页   0   2页   4 
+			$start_num=($page_args['page']-1)*$page_args['page_num'];
 
-			$job_list=$pdo_model->lists("job",'',$where_ar,$order);
-	 
-	 
+			$jobModel=parent::loadModel("JobModel");
+			$job_info=$jobModel->get_total();
+
+			$page_args['total_page']=ceil($job_info['total']/$page_args['page_num']);//总共有多少页  15/4= 4
+
+			$job_list=$pdo_model->lists("job",$start_num.','.$page_args['page_num'],$where_ar,$order);
+	 		
+	 		$page_args['p_li_html'];
+	 		for($p_num=1;$p_num<=$page_args['total_page'];$p_num++){
+	 				$page_args['p_li_html'].=' <a href="'.URL_PATH.'/index.php?c=job&p='.$p_num.'">第'.$p_num.'页</a> | ';
+	 		}
+
+	 		
+		 	$this->assigin("page_args",$page_args);
+	 		
 		 	$this->assigin("job_list",$job_list);
 
 		 	$this->assigin("title","职位管理列表");
@@ -57,6 +75,8 @@ class  JobController extends BaseController{
 		// 添加sql语句
 		$add_array["job_name"]=$_POST['job_name'];
 		$add_array["money"]=$_POST['money'];
+		$add_array["lng"]=$_POST['lng'];
+		$add_array["lat"]=$_POST['lat'];
 		$add_array["job_require"]=$_POST['job_require'];
 		$add_array["add_time"]=time();//1481178395
 		$add_array["enterprise_id"]=$_SESSION['uid'];

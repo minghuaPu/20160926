@@ -76,8 +76,9 @@ class BaseController {
 	 */
 	public function loadModel($modelName)
 	{
+		include_once ROOT_PATH.'/model/'.$modelName.'.php';
 		$mysql=new $modelName();
-		$mysql->init();
+		
 		return $mysql;
 	}
 

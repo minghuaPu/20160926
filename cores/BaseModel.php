@@ -161,6 +161,15 @@ class BaseModel {
 		self::$pdo_db->exec($upd_sql);
 
 	}
+	public function query($sql)
+	{
+		self::$query_sql=$sql;
+		$pre_stat=self::$pdo_db->prepare(self::$query_sql);// prepare 是什么？
+		
+		$result=$pre_stat->execute(); // execute 预处理sql语句
+
+		return  $pre_stat->fetch(PDO::FETCH_ASSOC);
+	}
 	/**
 	 * 错误信息显示
 	 * @return string  [description]

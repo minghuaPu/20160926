@@ -50,9 +50,8 @@
     <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-10">
-        分页：4/8
-          <a href="{URL_PATH}/index.php?c=job&p=1">第一页</a>
-          <a href="{URL_PATH}/index.php?c=job&p=2">第二页</a>
+       当前：第{$page_args['page']}页，总共：{$page_args['total_page']}页
+         {$page_args['p_li_html']}
         </div>
         <div class="col-md-2"></div>
     </div>

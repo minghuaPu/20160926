@@ -1,12 +1,42 @@
-{include "public/header.html"}
+<?php
+/* Smarty version 3.1.30, created on 2016-12-16 15:10:03
+  from "D:\wamp\www\20160926\dream_upgrade\template\job\add.html" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_5853934b5a3d55_75831565',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '56fdc32a6a8c17d86e146eb85a9805ab046223b6' => 
+    array (
+      0 => 'D:\\wamp\\www\\20160926\\dream_upgrade\\template\\job\\add.html',
+      1 => 1481872198,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:public/header.html' => 1,
+    'file:public/footer.html' => 1,
+  ),
+),false)) {
+function content_5853934b5a3d55_75831565 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_subTemplateRender("file:public/header.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+
  <style>
   #allmap { width: 100%;height: 100%;margin:10px  0!important;overflow: hidden;margin:0;font-family:"微软雅黑"; }
 </style>
-<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ugoCVFLWrP4jOeIKSC8x0xGDntHVEYux"></script>
+<?php echo '<script'; ?>
+ type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ugoCVFLWrP4jOeIKSC8x0xGDntHVEYux"><?php echo '</script'; ?>
+>
 
   <div class="container">
     
-    <form action="{URL_PATH}/job/save" method="post">
+    <form action="<?php echo URL_PATH;?>
+/job/save" method="post">
       <div class="form-group">
         <label for="">岗位名称：</label>
         <input type="text"  class="form-control"  name="job_name" required></div>
@@ -16,9 +46,11 @@
         <div class="form-group" style="height:380px;padding:20px 0;">
       <div class="fl">
         经度：
-        <input type="text" name="lng" value="{$info_arr['lng']}">
+        <input type="text" name="lng" value="<?php echo $_smarty_tpl->tpl_vars['info_arr']->value['lng'];?>
+">
         纬度：
-        <input type="text" name="lat" value="{$info_arr['lat']}"></div>
+        <input type="text" name="lat" value="<?php echo $_smarty_tpl->tpl_vars['info_arr']->value['lat'];?>
+"></div>
 
       <div class="fr">
         <input type="text" id="key_box" >
@@ -43,7 +75,8 @@
         </div>
     </form>
   </div>
- <script type="text/javascript">
+ <?php echo '<script'; ?>
+ type="text/javascript">
   // 百度地图API功能
   var map = new BMap.Map("allmap"); 
   var lng = $("input[name='lng']").val();
@@ -89,5 +122,9 @@
    
     local.search($("#key_box").val());
   }
-</script>
-{include "public/footer.html"} 
+<?php echo '</script'; ?>
+>
+<?php $_smarty_tpl->_subTemplateRender("file:public/footer.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+ <?php }
+}
