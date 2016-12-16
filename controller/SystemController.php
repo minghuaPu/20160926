@@ -5,7 +5,7 @@ class SystemController extends BaseController {
 	{
 		parent::clear_all_cache();
 
-		parent::jump_do("清除所有缓存成功！","/job");
+		parent::jump_do("清除所有缓存成功！！","/job");
 	}
 
 }

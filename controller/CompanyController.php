@@ -1,4 +1,4 @@
-<?
+﻿<?
 /**
 * 企业信息类
 */
@@ -50,7 +50,7 @@ class CompanyController extends BaseController
 		$pdo_model->add("company",$add_array);
 
 
-		parent::jump_do("添加成功！","/company");
+		jump_do("添加成功！","/company");
 	}
 
 
